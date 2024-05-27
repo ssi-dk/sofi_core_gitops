@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sap-web
+spec:
+  ports:
+    - port: 3333
+  selector:
+    app: sap-web
+  type: ClusterIP
+
