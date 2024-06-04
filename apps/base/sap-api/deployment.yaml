@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sap-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sap-api
+
+  template:
+    metadata:
+      labels:
+        app: sap-api
+        try: "0"
+
+    spec:
+      containers:
+        - name: sap-api
+          image: ghcr.io/ssi-dk/sap-api:v0.0.24
+          command: ["/bin/sh", "-c", "/app/start.sh"]
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: sap-api-configmap
+            - secretRef:
+                name: sap-api-secret
+
+          ports:
+            - containerPort: 6000
+              protocol: TCP
+
+      restartPolicy: Always

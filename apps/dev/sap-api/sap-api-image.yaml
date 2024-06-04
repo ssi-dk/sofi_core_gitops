@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sap-api
+spec:
+  template:
+    spec:
+      containers:
+        - name: sap-api
+          image: ghcr.io/ssi-dk/sap-web:v0.3.4
