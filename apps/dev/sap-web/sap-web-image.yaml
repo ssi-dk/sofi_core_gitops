@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: sap-web
-          image: ghcr.io/ssi-dk/sap-web:v0.3.4
+          image: ghcr.io/ssi-dk/sap-web:v0.3.5
