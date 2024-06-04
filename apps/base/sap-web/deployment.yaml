@@ -15,11 +15,6 @@ spec:
         try: "0"
 
     spec:
-      # securityContext:
-      #   runAsUser: 1000
-      #   runAsGroup: 1000
-      #   fsGroup: 1000
-
       containers:
         - name: sap-web
           image: ghcr.io/ssi-dk/sap-web:v0.0.24
@@ -30,8 +25,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: sap-web-configmap
-            - secretRef:
-                name: sap-web-container-env
 
           ports:
             - containerPort: 3333
