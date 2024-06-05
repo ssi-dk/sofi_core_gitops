@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bifrost-listener
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bifrost-listener
+
+  template:
+    metadata:
+      labels:
+        app: bifrost-listener
+        try: "0"
+
+    spec:
+      containers:
+        - name: bifrost-listener
+
+          # Do not change the image tag in the base directory.
+          # These are patched by Kustomize in the *-image.yaml files.
+          # Use /apps/dev/* or /apps/test/* etc directories instead.
+
+          image: ghcr.io/ssi-dk/bifrost-listener:v0.3.5
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: bifrost-listener-configmap
+            - secretRef:
+                name: bifrost-listener-secret
+
+          # Does not need to be exposed based on Docker compose config
+          # ports:
+          #   - containerPort: 6000
+          #     protocol: TCP
+
+      restartPolicy: Always

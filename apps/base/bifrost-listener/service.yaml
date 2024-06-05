@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bifrost-listener
+spec:
+  ports:
+    - port: # change me, and remember to uncomment in kustomization.yaml
+  selector:
+    app: bifrost-listener
+  type: ClusterIP
