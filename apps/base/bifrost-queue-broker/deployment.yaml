@@ -1,41 +1,41 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sap-api
+  name: bifrost-queue-broker
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sap-api
+      app: bifrost-queue-broker
 
   template:
     metadata:
       labels:
-        app: sap-api
+        app: bifrost-queue-broker
         try: "0"
 
     spec:
       containers:
-        - name: sap-api
+        - name: bifrost-queue-broker
 
           # Do not change the image tag in the base directory.
           # These are patched by Kustomize in the *-image.yaml files.
           # Use /apps/dev/* or /apps/test/* etc directories instead.
 
-          image: ghcr.io/ssi-dk/sap-api:v0.0.24
-          command: ["/bin/sh", "-c", "/app/start.sh"]
+          image: ghcr.io/ssi-dk/bifrost-queue-broker:v0.3.5
 
           securityContext:
             allowPrivilegeEscalation: false
 
           envFrom:
             - configMapRef:
-                name: sap-api-configmap
+                name: bifrost-queue-broker-configmap
             - secretRef:
-                name: sap-api-secret
+                name: bifrost-queue-broker-secret
 
-          ports:
-            - containerPort: 6000
-              protocol: TCP
+          # Does not need to be exposed based on Docker compose config
+          # ports:
+          #   - containerPort: 6000
+          #     protocol: TCP
 
       restartPolicy: Always

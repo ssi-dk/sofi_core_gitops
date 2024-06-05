@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bifrost-queue-broker
+spec:
+  template:
+    spec:
+      containers:
+        - name: bifrost-queue-broker
+          image: ghcr.io/ssi-dk/bifrost-queue-broker:v0.3.4

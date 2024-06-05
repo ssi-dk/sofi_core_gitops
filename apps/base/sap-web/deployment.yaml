@@ -17,6 +17,11 @@ spec:
     spec:
       containers:
         - name: sap-web
+
+          # Do not change the image tag in the base directory.
+          # These are patched by Kustomize in the *-image.yaml files.
+          # Use /apps/dev/* or /apps/test/* etc directories instead.
+
           image: ghcr.io/ssi-dk/sap-web:v0.0.24
 
           securityContext:
