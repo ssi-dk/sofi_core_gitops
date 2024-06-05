@@ -5,6 +5,6 @@ resources:
   - ../../base/bifrost-listener/
   - configmap.yaml
 images:
-  - name: bifrost-listener
-    newName: bifrost-listener
-    newTag: "v0.3.6"
+  - name: ghcr.io/ssi-dk/bifrost-listener
+    newName: ghcr.io/ssi-dk/bifrost-listener
+    newTag: "v0.3.7"

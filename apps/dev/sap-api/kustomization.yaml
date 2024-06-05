@@ -5,6 +5,6 @@ resources:
   - ../../base/sap-api/
   - configmap.yaml
 images:
-  - name: sap-api
-    newName: sap-api
-    newTag: "v0.3.6"
+  - name: ghcr.io/ssi-dk/sap-api
+    newName: ghcr.io/ssi-dk/sap-api
+    newTag: "v0.3.7"
