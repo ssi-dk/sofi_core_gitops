@@ -4,5 +4,7 @@ namespace: sofi
 resources:
   - ../../base/bifrost-queue-broker/
   - configmap.yaml
-patchesStrategicMerge:
-  - bifrost-queue-broker-image.yaml
+images:
+  - name: bifrost-queue-broker
+    newName: bifrost-queue-broker
+    newTag: "v0.3.6"

@@ -4,5 +4,7 @@ namespace: sofi
 resources:
   - ../../base/sap-web/
   - configmap.yaml
-patchesStrategicMerge:
-  - sap-web-image.yaml
+images:
+  - name: sap-web
+    newName: sap-web
+    newTag: "v0.3.6"

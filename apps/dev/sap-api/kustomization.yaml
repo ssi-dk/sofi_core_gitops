@@ -4,5 +4,7 @@ namespace: sofi
 resources:
   - ../../base/sap-api/
   - configmap.yaml
-patchesStrategicMerge:
-  - sap-api-image.yaml
+images:
+  - name: sap-api
+    newName: sap-api
+    newTag: "v0.3.6"

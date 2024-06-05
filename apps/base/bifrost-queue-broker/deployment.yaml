@@ -19,8 +19,8 @@ spec:
         - name: bifrost-queue-broker
 
           # Do not change the image tag in the base directory.
-          # These are patched by Kustomize in the *-image.yaml files.
-          # Use /apps/dev/* or /apps/test/* etc directories instead.
+          # These are patched by Kustomize in the kustomization.yaml files.
+          # Use the Kustomization files in the  /apps/dev/* or /apps/test/* etc directories instead.
 
           image: ghcr.io/ssi-dk/bifrost-queue-broker:v0.3.5
 
