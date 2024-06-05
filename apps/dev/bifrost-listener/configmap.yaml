@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: bifrost-listener-configmap
 data:
-  PYTHONDONTWRITEBYTECODE: 1
-  PYTHONUNBUFFERED: 0
+  PYTHONDONTWRITEBYTECODE: "1"
+  PYTHONUNBUFFERED: "0"
   LOG_LEVEL: DEBUG
