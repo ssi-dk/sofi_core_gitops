@@ -4,6 +4,7 @@ namespace: sofi
 resources:
   - ../../base/sap-web/
   - configmap.yaml
+  - ingress.yaml
 images:
   - name: ghcr.io/ssi-dk/sap-web
     newName: ghcr.io/ssi-dk/sap-web
