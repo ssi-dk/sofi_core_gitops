@@ -29,3 +29,6 @@ spec:
       pathType: Prefix
 
     httpRelativePath: "/auth"
+    extraEnvVars:
+      - name: KC_HOSTNAME_ADMIN_URL
+        value: "http://dev2.sofi-platform.dk/auth/admin"
