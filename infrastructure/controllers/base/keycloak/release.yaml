@@ -11,6 +11,10 @@ spec:
         name: keycloak
   interval: 1h0m0s
   values:
+    resources:
+      requests:
+        cpu: 100mi
+
     ingress:
       enabled: true
       ingressClassName: traefik
