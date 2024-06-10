@@ -24,5 +24,6 @@ spec:
       enabled: true
       ingressClassName: traefik
       hostname: dev2.sofi-platform.dk
+      path: "/auth/admin"
 
     httpRelativePath: "/auth"
