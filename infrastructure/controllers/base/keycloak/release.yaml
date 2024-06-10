@@ -26,4 +26,4 @@ spec:
       hostname: dev2.sofi-platform.dk
       path: "/auth/admin"
 
-    httpRelativePath: "/auth"
+    httpRelativePath: "/auth/"
