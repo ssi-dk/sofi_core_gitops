@@ -13,18 +13,14 @@ spec:
   values:
     resourcesPreset: "none"
 
-    # resources:
-    #   requests:
-    #     cpu: 100mi
-
     networkPolicy:
       enabled: false
 
     ingress:
       enabled: true
       ingressClassName: traefik
-    #   hostname: keycloak.local.com
+      hostname: dev2.sofi-platform.dk
     adminIngress:
       enabled: true
       ingressClassName: traefik
-      # hostname: keycloak.local.com
+      hostname: dev2.sofi-platform.dk
