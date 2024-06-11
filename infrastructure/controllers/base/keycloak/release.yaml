@@ -24,7 +24,8 @@ spec:
     adminIngress:
       enabled: true
       ingressClassName: traefik
-      hostname: kcadmin.dev2.sofi-platform.dk
+      hostname: dev2.sofi-platform.dk
+      # hostname: kcadmin.dev2.sofi-platform.dk
       # path: /
       # pathType: Prefix
 
