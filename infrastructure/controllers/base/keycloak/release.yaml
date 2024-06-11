@@ -29,7 +29,13 @@ spec:
       # path: /
       # pathType: Prefix
 
-    httpRelativePath: "/auth/"
-    # extraEnvVars:
-    #   - name: KC_HOSTNAME_ADMIN_URL
-    #     value: "http://dev2.sofi-platform.dk/auth/admin"
+    httpRelativePath: "/auth"
+    extraEnvVars:
+      #   - name: KC_HOSTNAME_ADMIN_URL
+      #     value: "http://dev2.sofi-platform.dk/auth/admin"
+      - name: KC_PROXY
+        value: edge
+      - name: KC_HOSTNAME_URL
+        value: http://dev2.sofi-platform.dk/auth
+      - name: PROXY_ADDRESS_FORWARDING
+        value: true
