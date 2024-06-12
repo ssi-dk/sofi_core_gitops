@@ -7,4 +7,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-listener
     newName: ghcr.io/ssi-dk/bifrost-listener
-    newTag: "v0.3.8"
+    newTag: "v1.0.1"

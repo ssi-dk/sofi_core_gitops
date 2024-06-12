@@ -7,4 +7,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/sap-api
     newName: ghcr.io/ssi-dk/sap-api
-    newTag: "v0.3.8"
+    newTag: "v1.0.1"
