@@ -48,6 +48,7 @@ spec:
 
     keycloakConfigCli:
       enabled: true
+      resourcesPreset: "none"
       configuration:
         master.json: |
           {
