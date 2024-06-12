@@ -20,22 +20,28 @@ spec:
       enabled: true
       ingressClassName: traefik
       hostname: dev2.sofi-platform.dk
-      # pathType: Prefix
+      path: /auth
+      pathType: Prefix
+
     adminIngress:
       enabled: true
       ingressClassName: traefik
       hostname: dev2.sofi-platform.dk
-      # hostname: kcadmin.dev2.sofi-platform.dk
-      # path: /
-      # pathType: Prefix
+      path: /auth/admin
+      pathType: Prefix
+
+    livenessProbe:
+      enabled: false
+
+    readinessProbe:
+      enabled: false
 
     httpRelativePath: "/auth"
+
     extraEnvVars:
-      #   - name: KC_HOSTNAME_ADMIN_URL
-      #     value: "http://dev2.sofi-platform.dk/auth/admin"
       - name: KC_PROXY
         value: edge
       - name: KC_HOSTNAME_URL
         value: http://dev2.sofi-platform.dk/auth
       - name: PROXY_ADDRESS_FORWARDING
-        value: true
+        value: "true"
