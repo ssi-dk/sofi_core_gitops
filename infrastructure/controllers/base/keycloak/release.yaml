@@ -45,3 +45,14 @@ spec:
         value: http://dev2.sofi-platform.dk/auth
       - name: PROXY_ADDRESS_FORWARDING
         value: "true"
+
+    keycloakConfigCli:
+      enabled: true
+      configuration:
+        master.json: |
+          {
+            "realm" : "master",
+            "attributes": {
+              "frontendUrl": "http://dev2.sofi-platform.dk/auth"
+            }
+          }
