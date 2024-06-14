@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: sofi
 resources:
   - ../../base/keycloak/
+  - release.yaml
