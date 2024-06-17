@@ -23,6 +23,14 @@ spec:
       hostname: dev2.sofi-platform.dk
       path: /auth
       pathType: Prefix
+      servicePort: https
+      tls: true
+      secrets:
+        - name: sofi-cert # your existing TLS secret name
+          key: tls.key
+          certificate: tls.crt
+      annotations:
+        kubernetes.io/ingress.class: "traefik"
 
     adminIngress:
       enabled: true
@@ -30,6 +38,14 @@ spec:
       hostname: dev2.sofi-platform.dk
       path: /auth/admin
       pathType: Prefix
+      servicePort: https
+      tls: true
+      secrets:
+        - name: sofi-cert # your existing TLS secret name
+          key: tls.key
+          certificate: tls.crt
+      annotations:
+        kubernetes.io/ingress.class: "traefik"
 
     livenessProbe:
       enabled: false
