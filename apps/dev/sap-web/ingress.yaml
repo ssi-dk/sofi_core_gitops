@@ -19,4 +19,4 @@ spec:
   tls:
     - hosts:
         - dev2.sofi-platform.dk
-      secretName: sofi-cert
+      secretName: dev2.sofi-platform.dk-tls
