@@ -25,10 +25,10 @@ spec:
       pathType: Prefix
       # servicePort: https
       tls: true
-      secrets:
-        - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
-          # key: tls.key
-          # certificate: tls.crt
+      # secrets:
+      # - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
+      # key: tls.key
+      # certificate: tls.crt
       annotations:
         kubernetes.io/ingress.class: "traefik"
 
@@ -40,10 +40,10 @@ spec:
       pathType: Prefix
       # servicePort: https
       tls: true
-      secrets:
-        - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
-          # key: tls.key
-          # certificate: tls.crt
+      # secrets:
+      #   - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
+      # key: tls.key
+      # certificate: tls.crt
       annotations:
         kubernetes.io/ingress.class: "traefik"
 
