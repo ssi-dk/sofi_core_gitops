@@ -26,7 +26,7 @@ spec:
       servicePort: https
       tls: true
       secrets:
-        - name: sofi-cert # your existing TLS secret name
+        - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
           key: tls.key
           certificate: tls.crt
       annotations:
@@ -41,7 +41,7 @@ spec:
       servicePort: https
       tls: true
       secrets:
-        - name: sofi-cert # your existing TLS secret name
+        - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
           key: tls.key
           certificate: tls.crt
       annotations:
