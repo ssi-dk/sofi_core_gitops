@@ -4,7 +4,7 @@ metadata:
   name: sap-api-configmap
 data:
   APP_MODULE: wsgi:app
-  IDP: https://configureme/auth/realms/sofi/protocol/openid-connect/certs
+  IDP: https://dev2.sofi-platform.dk/auth/realms/sofi/protocol/openid-connect/certs
   SOFI_UPLOAD_DIR: /tmp
   LOG_LEVEL: debug
   REQUESTS_CA_BUNDLE: /etc/ssl/certs/ca-certificates.crt
