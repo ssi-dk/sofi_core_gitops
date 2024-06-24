@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microreact
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microreact
+
+  template:
+    metadata:
+      labels:
+        app: microreact
+        try: "0"
+
+    spec:
+      containers:
+        - name: microreact
+
+          # Do not change the image tag in the base directory.
+          # These are patched by Kustomize in the kustomization.yaml files.
+          # Use the Kustomization files in the  /apps/dev/* or /apps/test/* etc directories instead.
+
+          image: ghcr.io/ssi-dk/microreact:v2.3.3
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: microreact-configmap
+            - secretRef:
+                name: microreact-secret
+
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          
+          volumeMounts:
+          - mountPath: /logs
+            name: microreact-logs
+            readOnly: false
+          - mountPath: /app/config.js
+            name: microreact-config
+            readOnly: true
+
+      restartPolicy: Always
+      volumes:
+      - name: microreact-logs
+        # mount /data/foo, but only if that directory already exists
+        hostPath:
+          path: /opt/sofi/microreact/logs # directory location on host
+          type: Directory # this field is optional
+      - name: microreact-config
+        # mount /data/foo, but only if that directory already exists
+        hostPath:
+          path: /opt/sofi/microreact/config.js # directory location on host
+          type: File # this field is optional
