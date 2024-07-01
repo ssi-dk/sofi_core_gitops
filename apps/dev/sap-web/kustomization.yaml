@@ -8,4 +8,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/sap-web
     newName: ghcr.io/ssi-dk/sap-web
-    newTag: "v2.4.1"
+    newTag: "v2.5.1"
