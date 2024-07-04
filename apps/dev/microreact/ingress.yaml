@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: dev.sofi-platform.dk
+    - host: microreact-dev.sofi-platform.dk
       http:
         paths:
           - backend:

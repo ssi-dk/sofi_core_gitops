@@ -4,7 +4,7 @@ metadata:
   name: microreact-configmap
 data:
   NODE_EXTRA_CA_CERTS: /etc/ssl/certs/ca-certificates.crt
-  NEXTAUTH_URL: https://dev.sofi-platform.dk/
+  NEXTAUTH_URL: https://microreact-dev.sofi-platform.dk/
   NEXTAUTH_URL_INTERNAL: http://microreact:3000/
   LOGGER_FILENAME: microreactlogs
   LOGGER_LEVEL: debug
@@ -12,7 +12,7 @@ data:
   CONFIG_FILE: /app/config.js
   MONGODB_DATABASE: microreact
   AUTH_WELLKNOWN_URI: https://dev2.sofi-platform.dk/auth/realms/sofi
-  BASE_URL: https://dev.sofi-platform.dk/
+  BASE_URL: https://microreact-dev.sofi-platform.dk/
   SMTP_HOST: mailhog
   SMTP_PORT: "1025"
   SMTP_USER: user
