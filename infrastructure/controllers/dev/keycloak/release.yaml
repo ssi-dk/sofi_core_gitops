@@ -25,7 +25,7 @@ spec:
       pathType: Prefix
       # servicePort: https
       tls: true
-      # secrets:
+      # secrets: 
       # - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
       # key: tls.key
       # certificate: tls.crt
