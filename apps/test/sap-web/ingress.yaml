@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sofi
+  namespace: sofi
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: test2.sofi-platform.dk
+      http:
+        paths:
+          - backend:
+              service:
+                name: sap-web
+                port:
+                  number: 3333
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - test2.sofi-platform.dk
+      secretName: test2.sofi-platform.dk-tls
