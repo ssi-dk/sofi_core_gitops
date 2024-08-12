@@ -16,12 +16,12 @@ spec:
 
     spec:
       hostAliases:
-      - ip: "192.168.113.12"
+      - ip: 192.168.113.12
         hostnames:
-        - "sofi_tbr_integration_dev"
-      - ip: "192.168.65.3"
+        - sofi_tbr_integration_dev
+      - ip: 192.168.65.3
         hostnames:
-        - "fvstlimsapp01t.prod.sitad.dk"
+        - fvstlimsapp01t.prod.sitad.dk
       containers:
         - name: sap-api
 
