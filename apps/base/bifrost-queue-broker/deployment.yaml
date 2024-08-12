@@ -47,13 +47,13 @@ spec:
           #     protocol: TCP
           
           volumeMounts:          
-          - mountPath: /app/.certs/client.key:ro
+          - mountPath: /app/.certs/client.key
             name: tbr-client-key
             readOnly: true
-          - mountPath: /app/.certs/client.pem:ro
+          - mountPath: /app/.certs/client.pem
             name: tbr-client-cert
             readOnly: true
-          - mountPath: /app/.certs/SOFI_ROOT.pem:ro
+          - mountPath: /app/.certs/SOFI_ROOT.pem
             name: tbr-ca-cert
             readOnly: true
 

@@ -44,5 +44,28 @@ spec:
           ports:
             - containerPort: 6000
               protocol: TCP
+          volumeMounts:          
+          - mountPath: /app/.certs/client.key
+            name: tbr-client-key
+            readOnly: true
+          - mountPath: /app/.certs/client.pem
+            name: tbr-client-cert
+            readOnly: true
+          - mountPath: /app/.certs/SOFI_ROOT.pem
+            name: tbr-ca-cert
+            readOnly: true
 
       restartPolicy: Always
+      volumes:
+      - name: tbr-client-key
+        hostPath:
+          path: /opt/sofi/secrets/certificates/tbr/client.key
+          type: File 
+      - name: tbr-client-cert        
+        hostPath:
+          path: /opt/sofi/secrets/certificates/tbr/client.pem
+          type: File 
+      - name: tbr-ca-cert        
+        hostPath:
+          path: /opt/sofi/secrets/certificates/tbr/SOFI_ROOT.pem 
+          type: File 
