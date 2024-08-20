@@ -44,6 +44,9 @@ spec:
           - mountPath: /app/config.js
             name: microreact-config
             readOnly: true
+          - mountPath: /app/files
+            name: microreact-files
+            readOnly: false            
 
       restartPolicy: Always
       volumes:
@@ -57,3 +60,7 @@ spec:
         hostPath:
           path: /opt/sofi/microreact/config.js # directory location on host
           type: File # this field is optional
+      - name: microreact-files
+        hostPath:
+          path: /opt/sofi/microreact/files # directory location on host
+          type: Directory # this field is optional
