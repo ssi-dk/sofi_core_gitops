@@ -7,4 +7,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-queue-broker
     newName: ghcr.io/ssi-dk/bifrost-queue-broker
-    newTag: "v2.8.0"
+    newTag: "v2.8.1"
