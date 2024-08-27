@@ -1,4 +1,4 @@
-# Sofi Core GitOps
+gi# Sofi Core GitOps
 
 This repo contains the GitOps configuration for the Sofi Core application.
 
