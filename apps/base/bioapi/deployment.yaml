@@ -37,7 +37,7 @@ spec:
             - containerPort: 8000
               protocol: TCP
           volumeMounts:
-          - mountPath: /app/dmx-data
+          - mountPath: /app/dmx_data
             name: dmx-data
             readOnly: false
           
