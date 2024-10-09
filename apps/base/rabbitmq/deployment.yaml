@@ -22,7 +22,7 @@ spec:
           # These are patched by Kustomize in the kustomization.yaml files.
           # Use the Kustomization files in the  /apps/dev/* or /apps/test/* etc directories instead.
 
-          image: rabbitmq:4.0.2
+          image: rabbitmq:4.0.2-management
 
           securityContext:
             allowPrivilegeEscalation: false
@@ -35,6 +35,8 @@ spec:
 
           ports:
             - containerPort: 5672
+              protocol: TCP
+            - containerPort: 15672
               protocol: TCP
           
           volumeMounts:
