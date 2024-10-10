@@ -4,6 +4,7 @@ namespace: sofi
 resources:
   - ../../base/rabbitmq/
   - configmap.yaml
+  - ingress.yaml
 images:
   - name: rabbitmq
     newName: rabbitmq
