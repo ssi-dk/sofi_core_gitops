@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq
+
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+        try: "0"
+
+    spec:
+      containers:
+        - name: rabbitmq
+
+          # Do not change the image tag in the base directory.
+          # These are patched by Kustomize in the kustomization.yaml files.
+          # Use the Kustomization files in the  /apps/dev/* or /apps/test/* etc directories instead.
+
+          image: rabbitmq:4.0.2-management
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: rabbitmq-configmap
+            - secretRef:
+                name: rabbitmq-secret
+
+          ports:
+            - containerPort: 5672
+              protocol: TCP
+            - containerPort: 15672
+              protocol: TCP
+          
+          volumeMounts:
+          - mountPath: /etc/rabbitmq/rabbitmq.conf
+            name: rabbitmq-config
+            readOnly: true
+
+      restartPolicy: Always
+      volumes:
+      - name: rabbitmq-config
+        hostPath:
+          path: /opt/sofi/rabbitmq/rabbitmq.conf
+          type: File
