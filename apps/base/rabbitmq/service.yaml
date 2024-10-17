@@ -6,8 +6,12 @@ spec:
   ports:
     - name: mqtt
       port: 5672
-    - name: management
+      protocol: TCP
+      targetPort: 5672
+    - name: management      
       port: 15672
+      protocol: TCP
+      targetPort: 15672
   selector:
     app: rabbitmq
-  type: ClusterIP
+  type: LoadBalancer
