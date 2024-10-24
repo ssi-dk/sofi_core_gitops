@@ -8,4 +8,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/microreact
     newName: ghcr.io/ssi-dk/microreact
-    newTag: "v2.3.3"
+    newTag: "v2.15.0"
