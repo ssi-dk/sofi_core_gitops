@@ -8,11 +8,11 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/sap-api
     newName: ghcr.io/ssi-dk/sap-api
-    newTag: "v2.8.0"
+    newTag: "v2.20.2"
 patches:
- - target:
+  - target:
       group: apps
       version: v1
       kind: Deployment
       name: bifrost-queue-broker
-   path: deployment-patch.yaml
+    path: deployment-patch.yaml
