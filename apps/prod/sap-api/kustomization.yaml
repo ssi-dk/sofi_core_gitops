@@ -14,5 +14,5 @@ patches:
       group: apps
       version: v1
       kind: Deployment
-      name: bifrost-queue-broker
+      name: sap-api
     path: deployment-patch.yaml
