@@ -8,7 +8,7 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/sap-api
     newName: ghcr.io/ssi-dk/sap-api
-    newTag: "v2.20.2"
+    newTag: "v2.21.1"
 patches:
   - target:
       group: apps
