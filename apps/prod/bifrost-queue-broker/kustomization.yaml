@@ -7,7 +7,7 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-queue-broker
     newName: ghcr.io/ssi-dk/bifrost-queue-broker
-    newTag: "v2.21.1"
+    newTag: "v2.21.2"
 patches:
   - target:
       group: apps
