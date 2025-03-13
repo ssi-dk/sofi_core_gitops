@@ -16,6 +16,13 @@ spec:
                   number: 8000
             path: /docs
             pathType: Prefix
+          - backend:
+              service:
+                name: bioapi
+                port:
+                  number: 8000
+            path: /openapi.json
+            pathType: Exact
   tls:
     - hosts:
         - dev2.sofi-platform.dk
