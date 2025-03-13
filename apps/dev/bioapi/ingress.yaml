@@ -14,7 +14,7 @@ spec:
                 name: bioapi
                 port:
                   number: 8000
-            path: /bioapi
+            path: /docs#
             pathType: Prefix
   tls:
     - hosts:
