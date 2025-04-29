@@ -5,7 +5,6 @@ resources:
   - ../../base/bifrost-queue-broker/
   - configmap.yaml
 images:
-  - name: ghcr.io/ssi-dk/bifrost-queue-broker
+  - name: ghcr.io/ssi-dk/bifrost-queue-broker-lims-pull
     newName: ghcr.io/ssi-dk/bifrost-queue-broker-lims-pull
-    newTag: "v2.25.1"
-nameSuffix: -lims-pull
+    newTag: "v2.27.0"
