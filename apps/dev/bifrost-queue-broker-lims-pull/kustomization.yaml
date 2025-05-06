@@ -8,3 +8,7 @@ images:
   - name: ghcr.io/ssi-dk/bifrost-queue-broker-lims-pull
     newName: ghcr.io/ssi-dk/bifrost-queue-broker-lims-pull
     newTag: "v2.27.0"
+metadata:
+  name: bifrost-queue-broker-lims-pull
+  labels:
+    app: bifrost-queue-broker-lims-pull

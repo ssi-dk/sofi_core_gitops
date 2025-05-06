@@ -8,3 +8,7 @@ images:
   - name: ghcr.io/ssi-dk/bifrost-queue-broker-tbr-request
     newName: ghcr.io/ssi-dk/bifrost-queue-broker-tbr-request
     newTag: "v2.27.0"
+metadata:
+  name: bifrost-queue-broker-tbr-request
+  labels:
+    app: bifrost-queue-broker-tbr-request
