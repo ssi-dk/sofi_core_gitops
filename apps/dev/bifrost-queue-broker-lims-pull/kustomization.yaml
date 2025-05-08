@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: sofi
+nameSuffix: -lims-pull
 resources:
   - ../../base/bifrost-queue-broker/
   - configmap.yaml
@@ -8,6 +9,12 @@ images:
   - name: ghcr.io/ssi-dk/bifrost-queue-broker-lims-pull
     newName: ghcr.io/ssi-dk/bifrost-queue-broker-lims-pull
     newTag: "v2.27.0"
+patchesStrategicMerge:
+  - |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: bifrost-queue-broker-lims-pull
 metadata:
   name: bifrost-queue-broker-lims-pull
   labels:
