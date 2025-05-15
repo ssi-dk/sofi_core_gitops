@@ -10,12 +10,4 @@ images:
     newName: ghcr.io/ssi-dk/bifrost-queue-broker-lims-request
     newTag: "v2.27.0"
 patchesStrategicMerge:
-  - |-
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: bifrost-queue-broker-lims-request
-metadata:
-  name: bifrost-queue-broker-lims-request
-  labels:
-    app: bifrost-queue-broker-lims-request
+  - patch.yaml
