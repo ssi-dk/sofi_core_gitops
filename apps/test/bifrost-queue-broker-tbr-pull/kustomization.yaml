@@ -8,7 +8,7 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-queue-broker-tbr-pull
     newName: ghcr.io/ssi-dk/bifrost-queue-broker-tbr-pull
-    newTag: "v2.27.18"
+    newTag: "v2.27.19"
 patches:
   - path: patch.yaml
     target:
