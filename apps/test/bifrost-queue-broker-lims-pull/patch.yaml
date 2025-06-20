@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: bifrost-queue-broker
-          image: ghcr.io/ssi-dk/bifrost-queue-broker-lims-pull:v2.27.20
+          image: ghcr.io/ssi-dk/bifrost-queue-broker-lims-pull:v2.28.1
