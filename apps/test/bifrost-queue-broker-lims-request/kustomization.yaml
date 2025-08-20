@@ -8,7 +8,7 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-queue-broker-lims-request
     newName: ghcr.io/ssi-dk/bifrost-queue-broker-lims-request
-    newTag: "v2.29.15"
+    newTag: "v2.29.19"
 patches:
   - path: patch.yaml
     target:
