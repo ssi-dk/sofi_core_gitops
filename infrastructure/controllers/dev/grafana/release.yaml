@@ -38,7 +38,6 @@ spec:
       type: ClusterIP
       port: 80
 
-    # optional datasource config (can also be done later)
     datasources:
       datasources.yaml:
         apiVersion: 1
@@ -46,5 +45,6 @@ spec:
           - name: Loki
             type: loki
             access: proxy
-            url: http://loki:3100
+            url: http://loki.sofi.svc.cluster.local:3100   # 👈 direct service
             isDefault: true
+
