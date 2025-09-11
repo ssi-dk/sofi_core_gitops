@@ -7,18 +7,14 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: loki-stack
-      version: 2.9.*   # pick stable version
+      chart: loki
+      version: 3.0.0   # pick an appropriate stable version
       sourceRef:
         kind: HelmRepository
         name: grafana
         namespace: flux-system
   values:
-    grafana:
-      enabled: false   # since you already deploy Grafana separately
-    promtail:
-      enabled: true    # to collect logs
-    loki:
-      persistence:
-        enabled: true
-        size: 10Gi
+    persistence:
+      enabled: true
+      size: 10Gi
+    mode: monolithic    # or “microservices” if you need scale and HA
