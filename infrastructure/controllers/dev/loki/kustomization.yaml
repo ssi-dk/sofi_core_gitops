@@ -3,4 +3,3 @@ kind: Kustomization
 namespace: sofi
 resources:
   - release.yaml
-  - ../../base/loki/
