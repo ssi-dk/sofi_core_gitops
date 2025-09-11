@@ -19,7 +19,7 @@ spec:
     auth_enabled: false
     auth:
       enabled: false
-    deploymentMode: SingleBinary   
+    singleBinary: true
     persistence:
       enabled: true
       size: 5Gi
