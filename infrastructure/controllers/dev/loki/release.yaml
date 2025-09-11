@@ -48,3 +48,7 @@ spec:
       replicas: 0
     bloomGateway:
       replicas: 0
+    grafana-agent-operator:
+      enabled: false
+    logs:
+      enabled: false
