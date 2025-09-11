@@ -19,3 +19,11 @@ spec:
     auth_enabled: false
     auth:
       enabled: false
+    backend:
+  replicas: 1
+
+read:
+  replicas: 1
+
+write:
+  replicas: 1
