@@ -25,3 +25,5 @@ spec:
       replicas: 1
     write:
       replicas: 1
+    gateway:
+      replicas: 1
