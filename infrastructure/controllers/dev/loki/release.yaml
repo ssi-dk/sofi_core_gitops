@@ -19,7 +19,26 @@ spec:
     auth_enabled: false
     auth:
       enabled: false
-    singleBinary: true
+    deploymentMode: SingleBinary
+    singleBinary:
+      replicas: 1                  # run only one pod
+    read:
+      replicas: 0
+    write:
+      replicas: 0
+    backend:
+      replicas: 0
+    gateway:
+      enabled: false
+    lokiCanary:
+      enabled: false
+    monitoring:
+      dashboards:
+        enabled: false
+      rules:
+        enabled: false
+      alerts:
+        enabled: false
     persistence:
       enabled: true
       size: 5Gi
