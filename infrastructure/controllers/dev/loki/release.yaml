@@ -14,6 +14,7 @@ spec:
         namespace: sofi
   interval: 1h
   values:
+    auth_enabled: false
     deploymentMode: SingleBinary   
     singleBinary:
       replicas: 1                  # run only one pod
