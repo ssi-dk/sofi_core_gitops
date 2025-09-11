@@ -14,17 +14,27 @@ spec:
         namespace: sofi
   interval: 1h
   values:
-    deploymentMode: "SingleBinary"
+    deploymentMode: SingleBinary   
     singleBinary:
-      replicas: 1                    # one pod
+      replicas: 1                  # run only one pod
     read:
-      replicas: 0                    # disable distributed read pods
+      replicas: 0
     write:
-      replicas: 0                    # disable distributed write pods
+      replicas: 0
     backend:
-      replicas: 0                    # disable backend pods
+      replicas: 0
     gateway:
       enabled: false
+    lokiCanary:
+      enabled: false
+    monitoring:
+      dashboards:
+        enabled: false
+      rules:
+        enabled: false
+      alerts:
+        enabled: false
+
     persistence:
       enabled: true
       size: 5Gi
