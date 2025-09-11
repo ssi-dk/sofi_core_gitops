@@ -7,13 +7,14 @@ spec:
   chart:
     spec:
       chart: loki
-      version: "5.38.0" # pick a recent stable chart version
+      version: "5.38.0"
       sourceRef:
         kind: HelmRepository
         name: grafana
         namespace: sofi
   interval: 1h
   values:
+    deploymentMode: "SingleBinary"
     persistence:
       enabled: true
       size: 5Gi
