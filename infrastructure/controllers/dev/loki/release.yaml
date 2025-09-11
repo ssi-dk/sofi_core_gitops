@@ -11,7 +11,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: grafana
-        namespace: flux-system   # 👈 this is critical
+        namespace: sofi
   interval: 1h
   values:
     persistence:
