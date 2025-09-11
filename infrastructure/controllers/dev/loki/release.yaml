@@ -15,6 +15,16 @@ spec:
   interval: 1h
   values:
     deploymentMode: "SingleBinary"
+    singleBinary:
+      replicas: 1                    # one pod
+    read:
+      replicas: 0                    # disable distributed read pods
+    write:
+      replicas: 0                    # disable distributed write pods
+    backend:
+      replicas: 0                    # disable backend pods
+    gateway:
+      enabled: false
     persistence:
       enabled: true
       size: 5Gi
