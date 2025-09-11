@@ -45,6 +45,6 @@ spec:
           - name: Loki
             type: loki
             access: proxy
-            url: http://loki.sofi.svc.cluster.local:3100   # 👈 direct service
+            url: http://loki-gateway.sofi.svc.cluster.local
             isDefault: true
 
