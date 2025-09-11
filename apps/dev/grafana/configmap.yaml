@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: rabbitmq-configmap
-data:
-  RABBITMQ_CONFIG_FILE: /opt/sofi/rabbitmq/rabbitmq.conf
-  HOSTNAME: sofi-rabbitmq
