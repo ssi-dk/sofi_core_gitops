@@ -21,24 +21,30 @@ spec:
       enabled: false
     deploymentMode: SingleBinary
     singleBinary:
-      replicas: 1                  # run only one pod
+      replicas: 1
+    # Zero out replica counts of other deployment modes
+    backend:
+      replicas: 0
     read:
       replicas: 0
     write:
       replicas: 0
-    backend:
+
+    ingester:
       replicas: 0
-    gateway:
-      enabled: false
-    lokiCanary:
-      enabled: false
-    monitoring:
-      dashboards:
-        enabled: false
-      rules:
-        enabled: false
-      alerts:
-        enabled: false
-    persistence:
-      enabled: true
-      size: 5Gi
+    querier:
+      replicas: 0
+    queryFrontend:
+      replicas: 0
+    queryScheduler:
+      replicas: 0
+    distributor:
+      replicas: 0
+    compactor:
+      replicas: 0
+    indexGateway:
+      replicas: 0
+    bloomCompactor:
+      replicas: 0
+    bloomGateway:
+      replicas: 0
