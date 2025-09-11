@@ -19,7 +19,8 @@ spec:
     ingress:
       enabled: true
       ingressClassName: traefik
-      hosts: dev2.sofi-platform.dk
+      hosts:
+        - dev2.sofi-platform.dk
       paths:
         - path: /grafana
           pathType: Prefix
