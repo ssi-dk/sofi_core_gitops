@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: grafana
+  name: rabbitmq
 spec:
   ports:
     - name: mqtt
@@ -13,5 +13,5 @@ spec:
       protocol: TCP
       targetPort: 15672
   selector:
-    app: grafana
+    app: rabbitmq
   type: LoadBalancer
