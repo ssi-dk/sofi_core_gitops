@@ -24,3 +24,5 @@ spec:
       replicas: 1
     gateway:
       replicas: 1
+    logs:
+      enabled: false 
