@@ -15,10 +15,7 @@ spec:
   interval: 1h
   values:
     loki:
-        auth_enabled: false
-    auth_enabled: false
-    auth:
-      enabled: false
+      auth_enabled: false
     backend:
       replicas: 1
     read:
