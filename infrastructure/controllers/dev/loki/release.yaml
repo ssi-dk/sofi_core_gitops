@@ -14,7 +14,10 @@ spec:
         namespace: sofi
   interval: 1h
   values:
-    Auth:
+    loki:
+        auth_enabled: false
+    auth_enabled: false
+    auth:
       enabled: false
     deploymentMode: SingleBinary   
     singleBinary:
