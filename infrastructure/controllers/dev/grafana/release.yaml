@@ -19,11 +19,10 @@ spec:
     ingress:
       enabled: true
       ingressClassName: traefik
-      hosts:
-        - host: dev2.sofi-platform.dk
-          paths:
-            - path: /grafana
-              pathType: Prefix
+      hosts: dev2.sofi-platform.dk
+      paths:
+        - path: /grafana
+          pathType: Prefix
       tls:
         - secretName: dev2.sofi-platform.dk-tls
           hosts:
