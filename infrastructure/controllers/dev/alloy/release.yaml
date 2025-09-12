@@ -36,7 +36,7 @@ spec:
           }
           // loki.source.kubernetes tails logs from Kubernetes containers using the Kubernetes API.
           loki.source.kubernetes "pod_logs" {
-            targets    = discovery.relabel.pod_logs.output
+            targets    = discovery.kubernetes.pod.output
             forward_to = [loki.write.default.receiver]
           }
           
