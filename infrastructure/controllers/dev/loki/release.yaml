@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: loki
+spec:
+  chart:
+    spec:
+      chart: loki
+      version: "7.3.11" # pick a stable chart version
+      sourceRef:
+        kind: HelmRepository
+        name: loki
+  interval: 1h0m0s
+  values:
+    loki:
+      auth_enabled: false
+      deploymentMode: SingleBinary
+    deploymentMode: SingleBinary
+
+    
+
