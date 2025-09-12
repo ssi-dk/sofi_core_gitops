@@ -11,7 +11,7 @@ spec:
     branch: logging
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/ssi-dk/sofi_core_gitops.git
+  url: ssh://git@github.com/ssi-dk/sofi_core_gitops
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
