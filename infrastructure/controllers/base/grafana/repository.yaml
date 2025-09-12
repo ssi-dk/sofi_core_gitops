@@ -4,5 +4,4 @@ metadata:
   name: grafana
 spec:
   interval: 1h0m0s
-  type: oci
   url: https://grafana.github.io/helm-charts
