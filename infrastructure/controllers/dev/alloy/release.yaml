@@ -33,7 +33,7 @@ spec:
                 __path__  = "/var/log/syslog",
                 job       = "node/syslog",
                 node_name = sys.env("HOSTNAME"),
-                cluster   = dev,
+                cluster   = clusters/dev,
             }]
           }
 
