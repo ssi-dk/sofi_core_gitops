@@ -1,0 +1,78 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: grafana
+spec:
+  chart:
+    spec:
+      chart: keycloak
+      version: "21.4.1"
+      sourceRef:
+        kind: HelmRepository
+        name: keycloak
+  interval: 1h0m0s
+  values:
+    resourcesPreset: none
+
+    networkPolicy:
+      enabled: false
+
+    ingress:
+      enabled: true
+      ingressClassName: traefik
+      hostname: dev2.sofi-platform.dk
+      path: /auth
+      pathType: Prefix
+      # servicePort: https
+      tls: true
+      # secrets: 
+      # - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
+      # key: tls.key
+      # certificate: tls.crt
+      annotations:
+        kubernetes.io/ingress.class: "traefik"
+
+    adminIngress:
+      enabled: true
+      ingressClassName: traefik
+      hostname: dev2.sofi-platform.dk
+      path: /auth/admin
+      pathType: Prefix
+      # servicePort: https 
+      tls: true
+      # secrets: s
+      #   - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
+      # key: tls.key
+      # certificate: tls.crt
+      annotations:
+        kubernetes.io/ingress.class: "traefik"
+
+    livenessProbe:
+      enabled: false
+
+    readinessProbe:
+      enabled: false
+
+    httpRelativePath: "/auth"
+
+    extraEnvVars:
+      - name: KC_HOSTNAME_ADMIN_URL
+        value: "https://dev2.sofi-platform.dk/auth"
+      - name: KC_PROXY
+        value: edge
+      - name: KC_HOSTNAME_URL
+        value: https://dev2.sofi-platform.dk/auth
+      - name: PROXY_ADDRESS_FORWARDING
+        value: "true"
+
+    keycloakConfigCli:
+      enabled: true
+      resourcesPreset: "none"
+      configuration:
+        master.json: |
+          {
+            "realm" : "master",
+            "attributes": {
+              "frontendUrl": "https://dev2.sofi-platform.dk/auth"
+            }
+          }
