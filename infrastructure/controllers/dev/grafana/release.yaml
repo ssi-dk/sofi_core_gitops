@@ -5,74 +5,46 @@ metadata:
 spec:
   chart:
     spec:
-      chart: keycloak
-      version: "21.4.1"
+      chart: grafana
+      version: "7.3.11" # pick a stable chart version
       sourceRef:
         kind: HelmRepository
-        name: keycloak
+        name: grafana
   interval: 1h0m0s
   values:
-    resourcesPreset: none
-
-    networkPolicy:
-      enabled: false
+    persistence:
+      enabled: true
+      size: 2Gi
 
     ingress:
       enabled: true
       ingressClassName: traefik
-      hostname: dev2.sofi-platform.dk
-      path: /auth
-      pathType: Prefix
-      # servicePort: https
-      tls: true
-      # secrets: 
-      # - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
-      # key: tls.key
-      # certificate: tls.crt
+      hosts:
+        - dev2.sofi-platform.dk
+      paths:
+        - path: /grafana
+          pathType: Prefix
+      tls:
+        - secretName: dev2.sofi-platform.dk-tls
+          hosts:
+            - dev2.sofi-platform.dk
       annotations:
         kubernetes.io/ingress.class: "traefik"
 
-    adminIngress:
-      enabled: true
-      ingressClassName: traefik
-      hostname: dev2.sofi-platform.dk
-      path: /auth/admin
-      pathType: Prefix
-      # servicePort: https 
-      tls: true
-      # secrets: s
-      #   - name: dev2.sofi-platform.dk-tls # your existing TLS secret name
-      # key: tls.key
-      # certificate: tls.crt
-      annotations:
-        kubernetes.io/ingress.class: "traefik"
+    adminUser: admin
+    adminPassword: admin
 
-    livenessProbe:
-      enabled: false
+    service:
+      type: ClusterIP
+      port: 80
 
-    readinessProbe:
-      enabled: false
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+          - name: Loki
+            type: loki
+            access: proxy
+            url: http://loki-gateway.sofi.svc.cluster.local
+            isDefault: true
 
-    httpRelativePath: "/auth"
-
-    extraEnvVars:
-      - name: KC_HOSTNAME_ADMIN_URL
-        value: "https://dev2.sofi-platform.dk/auth"
-      - name: KC_PROXY
-        value: edge
-      - name: KC_HOSTNAME_URL
-        value: https://dev2.sofi-platform.dk/auth
-      - name: PROXY_ADDRESS_FORWARDING
-        value: "true"
-
-    keycloakConfigCli:
-      enabled: true
-      resourcesPreset: "none"
-      configuration:
-        master.json: |
-          {
-            "realm" : "master",
-            "attributes": {
-              "frontendUrl": "https://dev2.sofi-platform.dk/auth"
-            }
-          }
