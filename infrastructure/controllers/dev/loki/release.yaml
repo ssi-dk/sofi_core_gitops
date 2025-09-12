@@ -24,5 +24,18 @@ spec:
       replicas: 1
     gateway:
       replicas: 1
+    monitoring:
+      dashboards:
+        enabled: false
+      rules:
+        enabled: false
+      alerts:
+        enabled: false
+    test:
+      enabled: false
+    lokiCanary:
+      enabled: false
     logs:
-      enabled: false 
+      enabled: false     # 👈 disables loki-logs DaemonSet
+    promtail:
+      enabled: false     # 👈 makes sure promtail isn’t deployed
