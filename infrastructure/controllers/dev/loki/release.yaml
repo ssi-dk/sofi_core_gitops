@@ -17,13 +17,13 @@ spec:
     loki:
       auth_enabled: false
     backend:
-      replicas: 1
+      replicas: 3
     read:
-      replicas: 1
+      replicas: 3
     write:
-      replicas: 1
+      replicas: 3
     gateway:
-      replicas: 1
+      replicas: 3
     monitoring:
       dashboards:
         enabled: false
