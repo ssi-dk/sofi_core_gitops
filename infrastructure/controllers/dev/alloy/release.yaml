@@ -27,7 +27,14 @@ spec:
             url = "http://loki.sofi.svc.cluster.local:3100/loki/api/v1/push"
           }
         }
-
-        loki.source.kubernetes "pods" {
-          forward_to = [loki.write.default.receiver]
+        discovery.kubernetes "pod" {
+          role = "pod"
+          // Restrict to pods on the node to reduce cpu & memory usage
+          selectors {
+            role = "pod"
+            field = "spec.nodeName=" + coalesce(sys.env("HOSTNAME"), constants.hostname)
+          }
+        }
+        loki.source.kubernetes "pod_logs" {
+          forward_to = [loki.process.pod_logs.receiver]
         }
