@@ -36,6 +36,6 @@ spec:
     lokiCanary:
       enabled: false
     logs:
-      enabled: false     # 👈 disables loki-logs DaemonSet
+      enabled: false    
     promtail:
-      enabled: false     # 👈 makes sure promtail isn’t deployed
+      enabled: false   
