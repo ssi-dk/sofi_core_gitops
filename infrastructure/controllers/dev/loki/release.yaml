@@ -47,6 +47,8 @@ spec:
       replicas: 0
     write:
       replicas: 0
+    gateway:
+      replicas: 0
 
     ingester:
       replicas: 0
