@@ -112,9 +112,9 @@ spec:
         loki.process "pod_logs" {
           stage.static_labels {
               values = {
-                cluster = "<CLUSTER_NAME>",
+                cluster = "dev",
               }
           }
 
-          forward_to = [loki.write.<WRITE_COMPONENT_NAME>.receiver]
+          forward_to = [loki.write.default.receiver]
         }
