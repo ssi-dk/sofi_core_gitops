@@ -8,4 +8,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/sap-api
     newName: ghcr.io/ssi-dk/sap-api
-    newTag: "v2.32.2"
+    newTag: "v2.33.0"
