@@ -39,7 +39,6 @@ spec:
               namespace      = '{{ .Namespace }}'
               pod            = '{{ .Name }}'
               container_name = '{{ .ContainerName }}'
-              app             = '{{ if .Labels }}{{ default "unknown" (index .Labels "app.kubernetes.io/name") }}{{ else }}unknown{{ end }}'
             }
           }
           
