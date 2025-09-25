@@ -34,5 +34,12 @@ spec:
           loki.source.kubernetes "pods" {
             targets    = discovery.kubernetes.pods.targets
             forward_to = [loki.write.default.receiver]
+
+            labels = {
+              namespace      = "{{ .Namespace }}"
+              pod            = "{{ .Name }}"
+              container_name = "{{ .ContainerName }}"
+              app            = "{{ index .Labels "app.kubernetes.io/name" }}"
+            }
           }
           
