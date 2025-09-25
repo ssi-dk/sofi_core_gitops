@@ -36,9 +36,9 @@ spec:
             forward_to = [loki.write.default.receiver]
 
             labels = {
-              namespace      = '{{ .Namespace }}'
-              pod            = '{{ .Name }}'
-              container_name = '{{ .ContainerName }}'
+              namespace      = "{{ .Namespace }}""
+              pod            = "{{ .Name }}""
+              container_name = "{{ .ContainerName }}""
             }
           }
           
