@@ -36,10 +36,10 @@ spec:
             forward_to = [loki.write.default.receiver]
 
             labels = {
-              namespace      = "{{ .Namespace }}"
-              pod            = "{{ .Name }}"
-              container_name = "{{ .ContainerName }}"
-              app            = "{{ default \"unknown\" (index .Labels \"app.kubernetes.io/name\") }}"
+              namespace       = "{{ .Namespace }}"
+              pod             = "{{ .Name }}"
+              container_name  = "{{ .ContainerName }}"
+              app             = '{{ default "unknown" (index .Labels "app.kubernetes.io/name") }}'
             }
           }
           
