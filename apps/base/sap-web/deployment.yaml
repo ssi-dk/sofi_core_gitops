@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sap-web
+  labels:
+    app: sap-web
 spec:
   replicas: 1
   selector:
