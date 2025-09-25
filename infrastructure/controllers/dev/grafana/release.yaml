@@ -19,15 +19,12 @@ spec:
     ingress:
       enabled: true
       ingressClassName: traefik
-      hosts:
-        - dev2.sofi-platform.dk
-        - 172.23.72.51
+      hostname: dev2.sofi-platform.dk
       path: /grafana
       pathType: Prefix
-      tls:
-        - secretName: dev2.sofi-platform.dk-tls
-          hosts:
-            - dev2.sofi-platform.dk
+      tls: true
+      annotations:
+        kubernetes.io/ingress.class: "traefik"
       annotations:
         kubernetes.io/ingress.class: "traefik"
 
