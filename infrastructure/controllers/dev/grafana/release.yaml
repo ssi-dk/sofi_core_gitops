@@ -25,10 +25,10 @@ spec:
       hosts:
          - dev2.sofi-platform.dk
         
-      # tls:
-      #     hosts:
-      #       - dev2.sofi-platform.dk
-      #     secretName: dev2.sofi-platform.dk-tls
+      tls:
+          hosts:
+            - dev2.sofi-platform.dk
+          secretName: dev2.sofi-platform.dk-tls
 
     service:
       type: ClusterIP
