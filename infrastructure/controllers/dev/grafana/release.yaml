@@ -22,12 +22,9 @@ spec:
       hostname: dev2.sofi-platform.dk
       path: /grafana
       pathType: Prefix
-      tls: true
+      # tls: true
       annotations:
         kubernetes.io/ingress.class: "traefik"
-
-    adminUser: admin123
-    adminPassword: admin123
 
     service:
       type: ClusterIP
