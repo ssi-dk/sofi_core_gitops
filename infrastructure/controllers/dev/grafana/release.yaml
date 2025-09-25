@@ -26,8 +26,8 @@ spec:
       annotations:
         kubernetes.io/ingress.class: "traefik"
 
-    adminUser: admin
-    adminPassword: admin
+    adminUser: admin123
+    adminPassword: admin123
 
     service:
       type: ClusterIP
