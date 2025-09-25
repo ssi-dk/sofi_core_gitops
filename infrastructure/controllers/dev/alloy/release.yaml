@@ -18,7 +18,7 @@ spec:
         name: alloy-config
         content: |-
           logging {
-            level = "info"
+            level = "debug"
             format = "logfmt"
           }
           loki.write "default" {
