@@ -19,16 +19,23 @@ spec:
     ingress:
       enabled: true
       ingressClassName: traefik
-      hostname: dev2.sofi-platform.dk
+      hosts:
+         - dev2.sofi-platform.dk
       path: /grafana
       pathType: Prefix
       # tls: true
       annotations:
-        kubernetes.io/ingress.class: "traefik"
+        kubernetes.io/ingress.class: traefik
 
     service:
       type: ClusterIP
       port: 80
+    
+    grafana:
+      ini:
+        server:
+          root_url: https://dev2.sofi-platform.dk/grafana
+          serve_from_subpath: true
 
     datasources:
       datasources.yaml:
