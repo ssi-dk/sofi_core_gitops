@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: main
+    branch: logging2
   secretRef:
     name: flux-system
   url: https://github.com/ssi-dk/sofi_core_gitops.git
