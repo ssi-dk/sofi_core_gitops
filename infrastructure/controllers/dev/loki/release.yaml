@@ -22,7 +22,7 @@ spec:
             store: tsdb
             object_store: s3
             schema: v13
-            # retention_period: 10d # Add if needed
+            retention_period: 10h # Add if needed
             index:
               prefix: loki_index_
               period: 24h
