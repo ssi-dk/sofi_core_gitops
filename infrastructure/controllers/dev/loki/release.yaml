@@ -27,9 +27,9 @@ spec:
               period: 24h
       compactor:
         working_directory: /var/loki/retention
-        compaction_interval: 1m
+        compaction_interval: 24h
         retention_enabled: true
-        retention_delete_delay: 1m
+        retention_delete_delay: 1h
         retention_delete_worker_count: 150
         delete_request_store: s3
       pattern_ingester:
