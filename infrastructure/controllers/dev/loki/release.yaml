@@ -25,13 +25,16 @@ spec:
             index:
               prefix: loki_index_
               period: 24h
-      # compactor:
-      #   working_directory: /var/loki/retention
-      #   compaction_interval: 24h
-      #   retention_enabled: true
-      #   retention_delete_delay: 1h
-      #   retention_delete_worker_count: 150
-      #   delete_request_store: s3
+      compactor:
+        working_directory: /var/loki/retention
+        compaction_interval: 24h
+        retention_enabled: true
+        retention_delete_delay: 1h
+        retention_delete_worker_count: 150
+        delete_request_store: s3
+      storageConfig:
+        s3:
+          bucket_name: loki
       pattern_ingester:
           enabled: true
       limits_config:
