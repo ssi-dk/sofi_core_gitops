@@ -10,6 +10,10 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: grafana
+    install:
+      timeout: 600s
+    upgrade:
+      timeout: 600s
   interval: 1h0m0s
   values:
     loki:
