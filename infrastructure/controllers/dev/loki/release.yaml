@@ -39,7 +39,6 @@ spec:
         volume_enabled: true
       ruler:
         enable_api: true
-
     minio:
       enabled: true
       buckets:
