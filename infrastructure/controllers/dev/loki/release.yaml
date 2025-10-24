@@ -55,6 +55,9 @@ spec:
       - name: loki
         policy: none
         purge: false
+      - name: whatevertest123
+        policy: none
+        purge: false
           
     deploymentMode: SingleBinary
 
