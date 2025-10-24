@@ -31,14 +31,7 @@ spec:
         retention_enabled: true
         retention_delete_delay: 1h
         retention_delete_worker_count: 150
-        delete_request_store: s3
-      storageConfig:
-        aws:
-          s3: s3://loki-bucket
-          endpoint: minio:9000
-          access_key_id: minio
-          secret_access_key: minio123
-          insecure: true   
+        delete_request_store: s3 
       pattern_ingester:
         enabled: true
       limits_config:
@@ -49,6 +42,19 @@ spec:
 
     minio:
       enabled: true
+      buckets:
+      - name: chunks
+        policy: none
+        purge: false
+      - name: ruler
+        policy: none
+        purge: false
+      - name: admin
+        policy: none
+        purge: false
+      - name: loki
+        policy: none
+        purge: false
           
     deploymentMode: SingleBinary
 
