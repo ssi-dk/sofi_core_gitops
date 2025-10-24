@@ -6,14 +6,10 @@ spec:
   chart:
     spec:
       chart: loki
-      version: "6.41.0"
+      version: "6.40.0"
       sourceRef:
         kind: HelmRepository
         name: grafana
-    install:
-      timeout: 600s
-    upgrade:
-      timeout: 600s
   interval: 1h0m0s
   values:
     loki:
@@ -35,29 +31,17 @@ spec:
         retention_enabled: true
         retention_delete_delay: 1h
         retention_delete_worker_count: 150
-        delete_request_store: s3 
+        delete_request_store: s3
       pattern_ingester:
-        enabled: true
+          enabled: true
       limits_config:
         allow_structured_metadata: true
         volume_enabled: true
       ruler:
         enable_api: true
+
     minio:
       enabled: true
-      buckets:
-      - name: chunks
-        policy: none
-        purge: false
-      - name: ruler
-        policy: none
-        purge: false
-      - name: admin
-        policy: none
-        purge: false
-      - name: loki
-        policy: none
-        purge: false
           
     deploymentMode: SingleBinary
 
