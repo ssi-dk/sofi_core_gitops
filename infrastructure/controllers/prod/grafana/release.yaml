@@ -6,7 +6,7 @@ spec:
   chart:
     spec:
       chart: grafana
-      version: "7.3.11" # pick a stable chart version
+      version: "9.x"
       sourceRef:
         kind: HelmRepository
         name: grafana
@@ -24,10 +24,10 @@ spec:
         kubernetes.io/ingress.class: traefik
       path: /grafana
       hosts:
-         - sofi-platform.dk
+        - sofi-platform.dk
         
       tls:
-          hosts:
+        - hosts:
             - sofi-platform.dk
           secretName: sofi-platform.dk-tls
 

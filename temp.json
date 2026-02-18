@@ -1,0 +1,114 @@
+{
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+        "annotations": {
+            "kubernetes.io/ingress.class": "traefik",
+            "meta.helm.sh/release-name": "grafana",
+            "meta.helm.sh/release-namespace": "sofi"
+        },
+        "creationTimestamp": "2025-09-12T13: 51: 00Z",
+        "generation": 10,
+        "labels": {
+            "app.kubernetes.io/instance": "grafana",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "grafana",
+            "app.kubernetes.io/version": "12.1.1",
+            "helm.sh/chart": "grafana-9.4.5",
+            "helm.toolkit.fluxcd.io/name": "grafana",
+            "helm.toolkit.fluxcd.io/namespace": "sofi"
+        },
+        "managedFields": [
+            {
+                "manager": "traefik",
+                "operation": "Update",
+                "apiVersion": "networking.k8s.io/v1",
+                "time": "2025-09-12T13: 51: 00Z",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:loadBalancer": {
+                            "f:ingress": {}
+                        }
+                    }
+                },
+                "subresource": "status"
+            },
+            {
+                "manager": "helm-controller",
+                "operation": "Update",
+                "apiVersion": "networking.k8s.io/v1",
+                "time": "2026-02-18T09: 26: 33Z",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:kubernetes.io/ingress.class": {},
+                            "f:meta.helm.sh/release-name": {},
+                            "f:meta.helm.sh/release-namespace": {}
+                        },
+                        "f:labels": {
+                            ".": {},
+                            "f:app.kubernetes.io/instance": {},
+                            "f:app.kubernetes.io/managed-by": {},
+                            "f:app.kubernetes.io/name": {},
+                            "f:app.kubernetes.io/version": {},
+                            "f:helm.sh/chart": {},
+                            "f:helm.toolkit.fluxcd.io/name": {},
+                            "f:helm.toolkit.fluxcd.io/namespace": {}
+                        }
+                    },
+                    "f:spec": {
+                        "f:ingressClassName": {},
+                        "f:rules": {},
+                        "f:tls": {}
+                    }
+                }
+            }
+        ],
+        "name": "grafana",
+        "namespace": "sofi",
+        "resourceVersion": "914221",
+        "uid": "a8ec2d81-c5d5-4355-ad96-4f185a6df66c"
+    },
+    "spec": {
+        "ingressClassName": "traefik",
+        "rules": [
+            {
+                "host": "dev2.sofi-platform.dk",
+                "http": {
+                    "paths": [
+                        {
+                            "backend": {
+                                "service": {
+                                    "name": "grafana",
+                                    "port": {
+                                        "number": 80
+                                    }
+                                }
+                            },
+                            "path": "/grafana",
+                            "pathType": "Prefix"
+                        }
+                    ]
+                }
+            }
+        ],
+        "tls": {
+            "hosts": [
+                "dev2.sofi-platform.dk"
+            ],
+            "secretName": "dev2.sofi-platform.dk-tls"
+        }
+    },
+    "status": {
+        "loadBalancer": {
+            "ingress": [
+                {
+                    "ip": "172.23.72.51"
+                }
+            ]
+        }
+    }
+}
