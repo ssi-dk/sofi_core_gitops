@@ -11,6 +11,7 @@ spec:
         kind: HelmRepository
         name: grafana
   interval: 1h0m0s
+  timeout: 20m
   values:
     loki:
       auth_enabled: false
