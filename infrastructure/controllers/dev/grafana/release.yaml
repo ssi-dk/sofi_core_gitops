@@ -6,7 +6,7 @@ spec:
   chart:
     spec:
       chart: grafana
-      version: "7.3.11" # pick a stable chart version
+      version: "11" # pick a stable chart version
       sourceRef:
         kind: HelmRepository
         name: grafana
