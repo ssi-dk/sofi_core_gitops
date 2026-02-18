@@ -22,8 +22,7 @@ spec:
       ingressClassName: traefik
       annotations:
         kubernetes.io/ingress.class: traefik
-      paths:
-        - /grafana
+      path: /grafana
       hosts:
         - dev2.sofi-platform.dk
         
