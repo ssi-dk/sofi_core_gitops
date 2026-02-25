@@ -46,9 +46,9 @@ spec:
         email_attribute_path: email
         login_attribute_path: username
         name_attribute_path: full_name
-        auth_url: https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/auth
-        token_url: https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/token
-        api_url: https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/userinfo
+        auth_url: https://dev2.sofi-platform.dk/auth/realms/sofi/protocol/openid-connect/auth
+        token_url: https://dev2.sofi-platform.dk/auth/realms/sofi/protocol/openid-connect/token
+        api_url: https://dev2.sofi-platform.dk/auth/realms/sofi/protocol/openid-connect/userinfo
         role_attribute_path:  contains(roles[*], 'logging-access')
 
       server:
