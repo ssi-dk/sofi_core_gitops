@@ -36,13 +36,12 @@ spec:
       port: 80
     
     grafana.ini:
-      assertNoLeakedSecrets: false 
+      
       auth.generic_oauth:
         enabled: true
         name: Keycloak-OAuth
         allow_sign_up: true
         client_id: grafana
-        client_secret: hpRnZ1rA85oyo3L1oxG1vohhvZLIrC20
         scopes: openid email profile offline_access roles
         email_attribute_path: email
         login_attribute_path: username
