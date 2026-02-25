@@ -42,13 +42,13 @@ spec:
         allow_sign_up: true
         client_id: grafana
         client_secret: hpRnZ1rA85oyo3L1oxG1vohhvZLIrC20
-        scopes:  openid email profile offline_access roles
-        email_attribute_path:  email
-        login_attribute_path:  username
-        name_attribute_path:  full_name
-        auth_url:  https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/auth
-        token_url:  https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/token
-        api_url:  https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/userinfo
+        scopes: openid email profile offline_access roles
+        email_attribute_path: email
+        login_attribute_path: username
+        name_attribute_path: full_name
+        auth_url: https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/auth
+        token_url: https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/token
+        api_url: https://dev2.sofi-platform.dk/auth/realms/Sofi/protocol/openid-connect/userinfo
         role_attribute_path:  contains(roles[*], 'logging-access')
 
       server:
