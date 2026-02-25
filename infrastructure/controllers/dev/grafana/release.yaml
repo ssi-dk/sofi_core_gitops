@@ -38,6 +38,7 @@ spec:
     grafana.ini:
       auth.anonymous:
         enabled: true
+        
       auth.generic_oauth:
         enabled: true
         name: Keycloak-OAuth
