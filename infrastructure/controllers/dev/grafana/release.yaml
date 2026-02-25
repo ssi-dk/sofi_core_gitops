@@ -36,7 +36,7 @@ spec:
       port: 80
     
     grafana.ini:
-      auth.anonymus:
+      auth.anonymous:
         enabled: true
       auth.generic_oauth:
         enabled: true
