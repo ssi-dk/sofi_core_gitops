@@ -36,9 +36,6 @@ spec:
       port: 80
     
     grafana.ini:
-      auth.anonymous:
-        enabled: true
-
       auth.generic_oauth:
         tls_skip_verify_insecure: true
         enabled: true
