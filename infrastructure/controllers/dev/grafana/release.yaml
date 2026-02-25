@@ -36,6 +36,7 @@ spec:
       port: 80
     
     grafana.ini:
+      assertNoLeakedSecrets: true 
       auth.generic_oauth:
         enabled: true
         name: Keycloak-OAuth
