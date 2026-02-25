@@ -36,9 +36,19 @@ spec:
       port: 80
     
     grafana.ini:
-      auth.anonymous:
+      auth.generic_oauth:
+        tls_skip_verify_insecure: true
         enabled: true
-        org_role: Admin
+        name: Keycloak-OAuth
+        client_id: grafana
+        scopes: openid email profile offline_access roles
+        email_attribute_path: email
+        login_attribute_path: username
+        name_attribute_path: full_name
+        auth_url: https://test2.sofi-platform.dk/auth/realms/sofi/protocol/openid-connect/auth
+        token_url: https://test2.sofi-platform.dk/auth/realms/sofi/protocol/openid-connect/token
+        api_url: https://test2.sofi-platform.dk/auth/realms/sofi/protocol/openid-connect/userinfo
+        role_attribute_path:  contains(roles[*], 'logging-access')
 
       server:
         domain: test2.sofi-platform.dk
