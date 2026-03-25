@@ -8,4 +8,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/sap-api
     newName: ghcr.io/ssi-dk/sap-api
-    newTag: "v2.54.1"
+    newTag: "v2.54.3-feature-freeze-2026-03-18.0"
