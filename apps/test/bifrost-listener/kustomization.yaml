@@ -7,4 +7,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-listener
     newName: ghcr.io/ssi-dk/bifrost-listener
-    newTag: "v2.55.1-feature-freeze-2026-03-18.0"
+    newTag: "v2.55.2-hotfix-2026-04-09.0"
