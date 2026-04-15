@@ -107,7 +107,7 @@ spec:
           loki.process "pod_logs" {
             stage.static_labels {
                 values = {
-                  cluster = "dev",
+                  cluster = "test",
                 }
             }
 
