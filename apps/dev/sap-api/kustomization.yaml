@@ -8,4 +8,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/sap-api
     newName: ghcr.io/ssi-dk/sap-api
-    newTag: "v2.62.4-fix-17226-nearest-neighbour-search-error.8"
+    newTag: "v2.62.4-fix-17226-nearest-neighbour-search-error.9"
