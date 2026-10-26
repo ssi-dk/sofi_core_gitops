@@ -7,4 +7,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-listener
     newName: ghcr.io/ssi-dk/bifrost-listener
-    newTag: "v2.62.4"
+    newTag: "v2.63.0-fix-15838-send-to-microreact-returns-500.0"

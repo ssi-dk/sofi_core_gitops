@@ -8,7 +8,7 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-queue-broker-tbr-request
     newName: ghcr.io/ssi-dk/bifrost-queue-broker-tbr-request
-    newTag: "v2.62.4"
+    newTag: "v2.63.0-fix-15838-send-to-microreact-returns-500.0"
 patches:
   - path: patch.yaml
     target:
