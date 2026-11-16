@@ -7,4 +7,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/bifrost-listener
     newName: ghcr.io/ssi-dk/bifrost-listener
-    newTag: "v2.62.6"
+    newTag: "v2.62.7-fix-15403-search-on-encrypted-columns.1"
