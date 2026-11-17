@@ -8,4 +8,4 @@ resources:
 images:
   - name: ghcr.io/ssi-dk/sap-api
     newName: ghcr.io/ssi-dk/sap-api
-    newTag: "v2.62.8-fix-15403-search-on-encrypted-columns.3"
+    newTag: "v2.62.8-fix-15403-search-on-encrypted-columns.4"
